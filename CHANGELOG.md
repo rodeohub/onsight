@@ -2,6 +2,13 @@
 
 Versions follow semantic versioning: MAJOR for changes that can break projects (a role renamed or removed), MINOR for new roles, tokens or docs, PATCH for fixes. Projects install a tagged version, e.g. `npm install @slacklineinternational/onsight@0.16.0` (or from GitHub: `npm install github:rodeohub/onsight#v0.16.0`), and upgrade on purpose.
 
+## 0.18.0 (2026-11-22)
+- New: `npx onsight-init`. Run it in a project root after installing. It adds a marked Onsight section to the project's `AGENTS.md` (created if missing) that points agents to the installed package's `AGENTS.md`, docs and CHANGELOG, and links `AGENTS.md` from `CLAUDE.md`. Running it again only replaces its own section. `--dry-run` shows the changes first.
+- `onsight-audit`: every finding now says what to use instead (a role for colors, the nearest token or Tailwind class for sizes).
+- `onsight-audit`: new warnings for raw spacing, border radius and font sizes in CSS and for Tailwind values in brackets (`p-[13px]`, `text-[15px]`). Values of 2px or less are ignored. Warnings do not fail the audit unless you add `--strict`; colors still fail as before, so projects that passed still pass.
+- `onsight-audit`: file paths print correctly on Windows.
+- `npm run check` audits Onsight's own components with `--strict`.
+
 ## 0.17.4 (2026-11-15)
 - First release published with npm trusted publishing (no token). Same content as 0.17.1 to 0.17.3.
 

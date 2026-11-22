@@ -1,6 +1,6 @@
 {
   "name": "@slacklineinternational/onsight",
-  "version": "0.17.4",
+  "version": "0.18.0",
   "description": "Onsight, the official design system of the International Slackline Association (ISA): tokens, docs and components for people and AI agents.",
   "keywords": [
     "design-system",
@@ -49,7 +49,7 @@
   },
   "scripts": {
     "build": "node scripts/build.mjs",
-    "check": "node scripts/build.mjs && node scripts/check-contrast.mjs && node scripts/audit.mjs components",
+    "check": "node scripts/build.mjs && node scripts/check-contrast.mjs && node scripts/audit.mjs components --strict",
     "audit": "node scripts/audit.mjs",
     "test:react": "node scripts/test-react.mjs",
     "test:tailwind": "node scripts/test-tailwind.mjs"
@@ -59,7 +59,8 @@
   },
   "bin": {
     "onsight-audit": "scripts/audit.mjs",
-    "isa-audit": "scripts/audit.mjs"
+    "isa-audit": "scripts/audit.mjs",
+      "onsight-init": "scripts/init.mjs"
   },
   "license": "SEE LICENSE IN LICENSE",
   "peerDependencies": {

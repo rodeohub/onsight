@@ -15,7 +15,7 @@ Design tokens, guidelines and components for projects of the [International Slac
 - `dist/`: generated CSS variables, a Tailwind v4 theme, resolved JSON and a preview page.
 - `components/`, `react/`: component styles (plain CSS), live examples and React wrappers.
 - `docs/`: how and when to use each foundation and component.
-- `scripts/`: build, contrast check (WCAG AA) and `onsight-audit` (also `isa-audit`), which finds colors in a project that bypass the system.
+- `scripts/`: build, contrast check (WCAG AA) `onsight-audit` (also `isa-audit`), which finds colors and sizes in a project that bypass the system and says what to use instead, and `onsight-init`, which connects a project's agent instructions to Onsight.
 - `fonts/`: Barlow and Barlow Condensed, self-hosted.
 - Licence: MIT, except the ISA name and logos (see LICENSE).
 
@@ -23,8 +23,10 @@ Design tokens, guidelines and components for projects of the [International Slac
 ```
 npm run build   # tokens/ -> dist/
 npm run check   # build + fail if any promised color pair is below WCAG AA
-node scripts/audit.mjs ../some-project/src   # find hard-coded colors in a project
+node scripts/audit.mjs ../some-project/src   # find hard-coded colors (errors) and raw sizes (warnings) in a project
 ```
+
+In a project: `npm install @slacklineinternational/onsight`, then `npx onsight-init` (connects the project's AGENTS.md and CLAUDE.md to Onsight) and `npx onsight-audit src` (add `--strict` to fail on warnings too).
 No dependencies; Node 18+.
 
 ## Status

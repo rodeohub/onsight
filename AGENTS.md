@@ -11,7 +11,7 @@ You are working with **Onsight**, the official design system of the Internationa
 6. **Reuse before you create.** Check `docs/components/` for an existing component or pattern. Use the `isa-*` classes (or the React components) for buttons, badges, alerts, form fields, tabs, dialogs, cards, tables, spinners, tooltips, drawers, avatars, the page header and footer, pagination, breadcrumbs, empty states, toasts, autocomplete, filters and the page layout instead of styling your own. New patterns need a human decision; note them in your PR.
 7. **Brand red and green 500 are for logos, large display text and decoration**, not small text or small buttons on white. Logos come from `assets/logos/` unchanged: never redraw or recolor one; use the white variant on green and dark surfaces, and keep the minimum sizes and clear space in `assets/logos/README.md`.
 8. **Light and dark themes.** Roles change with the theme (`data-theme` on `<html>`), so never hard-code colors and check your UI in both. Things that float (menus, popovers) use `surface.raised`. See `docs/foundations/theming.md`.
-9. **Before you say you are done** in a project: run `npx onsight-audit <your src folder>` (zero hard-coded colors) and check your UI at 360px.
+9. **Before you say you are done** in a project: run `npx onsight-audit <your src folder>` (zero errors: no hard-coded colors; fix the warnings for raw spacing, radius and font sizes where you can; each finding says what to use instead) and check your UI at 360px, in light and dark.
 
 ## Where things are
 | Need | File |
@@ -35,7 +35,7 @@ You are working with **Onsight**, the official design system of the Internationa
 ## Using it in a project
 - Tailwind v4: `@import "@slacklineinternational/onsight/fonts.css"; @import "@slacklineinternational/onsight/tailwind.css"; @import "@slacklineinternational/onsight/components.css" layer(components);`
 - Plain HTML: load `dist/fonts.css`, `dist/tokens.css`, `dist/components.css` and, for tabs, dialogs, drawers, tooltips, toasts, autocomplete, filters and the theme switch, `dist/isa.js` as a module script; then use `var(--isa-color-text-default)` etc.
-- Install: `npm install @slacklineinternational/onsight` (or a tagged version straight from GitHub: `npm install github:rodeohub/onsight#v0.17.4`; the repo will move to the `slacklineinternational` GitHub account). Check `CHANGELOG.md` before upgrading.
+- Install: `npm install @slacklineinternational/onsight`, then `npx onsight-init` in the project root. It adds a short Onsight section to the project's `AGENTS.md` (and links it from `CLAUDE.md`) so every agent session starts with these rules; run it again after upgrading. (or a tagged version straight from GitHub: `npm install github:rodeohub/onsight#v0.18.0`; the repo will move to the `slacklineinternational` GitHub account). Check `CHANGELOG.md` before upgrading.
 
 ## Changing the system (in this repo)
 1. Edit `tokens/` (DTCG JSON) or `components/`, and the matching doc in `docs/`.
