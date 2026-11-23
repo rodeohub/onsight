@@ -52,7 +52,10 @@
     "check": "node scripts/build.mjs && node scripts/check-contrast.mjs && node scripts/audit.mjs components --strict",
     "audit": "node scripts/audit.mjs",
     "test:react": "node scripts/test-react.mjs",
-    "test:tailwind": "node scripts/test-tailwind.mjs"
+    "test:tailwind": "node scripts/test-tailwind.mjs",
+    "storybook": "storybook dev -p 6006",
+    "test:stories": "vitest run",
+    "build-storybook": "storybook build"
   },
   "engines": {
     "node": ">=18"
@@ -60,7 +63,7 @@
   "bin": {
     "onsight-audit": "scripts/audit.mjs",
     "isa-audit": "scripts/audit.mjs",
-      "onsight-init": "scripts/init.mjs"
+    "onsight-init": "scripts/init.mjs"
   },
   "license": "SEE LICENSE IN LICENSE",
   "peerDependencies": {
@@ -74,5 +77,18 @@
   "publishConfig": {
     "access": "public",
     "provenance": true
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^10.6.8",
+    "@storybook/addon-docs": "^10.6.8",
+    "@storybook/addon-vitest": "^10.6.8",
+    "@storybook/react-vite": "^10.6.8",
+    "@vitest/browser-playwright": "latest",
+    "@vitest/coverage-v8": "latest",
+    "playwright": "latest",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "storybook": "^10.6.8",
+    "vitest": "latest"
   }
 }
