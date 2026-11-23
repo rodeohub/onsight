@@ -1,6 +1,6 @@
 # AGENTS.md: Onsight
 
-You are working with **Onsight**, the official design system of the International Slackline Association (ISA). Call it Onsight in code comments, docs, commit messages and pull requests. The npm package is `@slacklineinternational/onsight`; classes and variables keep the prefix `isa-`. Read this file first. It is short on purpose: open the linked doc for the area you are about to change, not all of them.
+You are working with **Onsight**, the official design system of the International Slackline Association (ISA). Call it Onsight in code comments, docs, commit messages and pull requests. The npm package is `@slacklineinternational/onsight`; classes and variables keep the prefix `isa-`. Read this file first. For the project status, open questions and decisions, read the "Pending actions", "Open questions" and "Next steps" sections of `DECISIONS.md` before you start. It is short on purpose: open the linked doc for the area you are about to change, not all of them.
 
 ## Rules (always)
 1. **Use semantic tokens only.** Colors come from `--isa-color-<role>` (or the Tailwind classes built from them, e.g. `bg-action-primary-bg`, `text-muted`, `bg-subtle`, `border-strong`; text styles as `type-h1`, `type-body`). Never write hex, rgb or hsl values, and never use primitive tokens (`--isa-color-green-700`) in a project. If no role fits, stop and propose a new role in this repo instead of inventing a value.
@@ -25,7 +25,7 @@ You are working with **Onsight**, the official design system of the Internationa
 | Components: Button, Badge, Alert, form fields, Tabs, Dialog, Card, Table, Spinner, Tooltip, Drawer, Avatar, Header/Nav/Footer, Pagination, Breadcrumbs, Empty state, Toast, Autocomplete, Filters, Page layout (list, how to add more) | `docs/components/README.md` |
 | A full example page to model new pages on | `examples/sporthub-rankings.html` |
 | Component styles and live examples | `components/*.css`, `components/*.examples.html` |
-| Storybook (component states, accessibility tests): `npm run storybook`, `npm run test:stories` | `stories/`, `.storybook/` |
+| Storybook (component states, accessibility tests; online at https://rodeohub.github.io/onsight/storybook/): `npm run storybook`, `npm run test:stories` | `stories/`, `.storybook/` |
 | React components | `react/` (`import { Button, Badge, Alert, TextField, ... } from "@slacklineinternational/onsight/react"`) |
 | What differs from the Slackline Sport Hub (for its developers) | `docs/sporthub-differences.md` |
 | Figma library (a mirror of this repo) | `docs/figma.md` |
@@ -45,4 +45,4 @@ You are working with **Onsight**, the official design system of the Internationa
 4. Record decisions in `DECISIONS.md`. Brand-value changes need Roberto's OK.
 5. Releases: bump `version` in package.json (semantic versioning, see `CHANGELOG.md`), add a CHANGELOG entry, then tag `vX.Y.Z` and push the tag.
 6. Writing style for docs: plain, concise, no em dashes.
-7. React components: add or update the story in `stories/<Component>.stories.jsx` (one story per state, including disabled, long text and dark mode) and run `npm run test:stories`; accessibility violations fail it. Stories exist only for Button, Badge and Alert so far; do not write the others until Roberto says so.
+7. React components: add or update the story in `stories/<Component>.stories.jsx` (one story per state, including disabled, long text and dark mode) and run `npm run test:stories`; accessibility violations fail it. Stories exist for Button, Badge, Alert, TextField and Card; do not write the others until Roberto says so.
