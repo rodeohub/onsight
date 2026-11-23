@@ -1,5 +1,12 @@
 name: check
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
+  pull_request:
+# A newer push to the same branch or PR cancels the older run.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   check:
     runs-on: ubuntu-latest
