@@ -66,6 +66,7 @@ Agents working with Roberto: raise the open questions with him at the start of a
 | 2026-11-23 | Storybook will be added, ending the zero-dependency state of the repo. This replaces the earlier "not needed now" note. Reasons: Roberto wants to learn the standard component workflow, and it adds state testing, accessibility checks and a base for visual regression. Dependencies are dev tooling only: `files` in package.json keeps them out of the published package, and the token build in `scripts/build.mjs` stays dependency-free. | Roberto, Claude |
 
 ## Pending actions
+- **Storybook stories (waiting for Roberto's go-ahead):** Button, Badge and Alert are done (24 tests, accessibility violations fail). The other 18 React components have none yet. Planned in batches: forms, navigation, overlays (Dialog, Drawer, Toast). Do not start before Roberto says so.
 - **Rename the Claude project** "ISA Design System" to "Onsight" (claude.ai, project settings; only Roberto can do this).
 - **Missing logos:** more may follow (for example ISA Nature). Roberto provides the SVGs; they go into `assets/logos/` (list in `assets/logos/README.md`, Still missing).
 - **npm token (Roberto):** trusted publishing works (v0.17.4, 2026-11-15). Delete the GitHub secret `NPM_TOKEN` and the token on npmjs.com; nothing uses them now.
@@ -73,8 +74,12 @@ Agents working with Roberto: raise the open questions with him at the start of a
 ## Open questions
 3. **Solid badges (parked by Roberto, 2026-11-14):** SportHub has two solid badges (athlete: white on red, judge: white on green). Add a solid badge style, or keep soft and outline only? Do not raise again until Roberto does or the SportHub migration starts.
 
+4. **Hosting Storybook (open):** GitHub Pages next to the preview page is the recommended start (free, rebuilt on each merge to main). A subdomain such as onsight.whyrodeo.com or an ISA domain can point to it later with one DNS record. Not set up yet; it needs a workflow change.
+5. **Visual regression (open):** add Chromatic (removed from the Storybook setup for now) or Playwright screenshots, after more components have stories.
+6. **Name clash (open):** the top-level `react/` folder shadows the npm package `react` in the Storybook test setup. Worked around with an alias in `vitest.config.js`. Accept it, or rename the folder (would break `@slacklineinternational/onsight/react` imports, so a major version).
+
 ## Next steps
 1. Dark mode follow-ups: a Dark mode in the Figma `Color` collection (needs a paid Figma plan: Starter allows one mode), hover and focus states checked by hand in dark.
 2. If the Sport Hub migrates later (separate project): a class map from default Tailwind colors to roles.
 3. Possible components: multi-select dropdown, number field with steppers.
-4. Storybook: add it (decided 2026-11-23), with the accessibility addon. Visual regression comes after it.
+4. Storybook is installed (2026-11-23, PR 3). Next: stories for the other components (after Roberto's go-ahead), then hosting and visual regression (open questions 4 and 5).
