@@ -3,7 +3,7 @@
 Versions follow semantic versioning: MAJOR for changes that can break projects (a role renamed or removed), MINOR for new roles, tokens or docs, PATCH for fixes. Projects install a tagged version, e.g. `npm install @slacklineinternational/onsight@0.16.0` (or from GitHub: `npm install github:rodeohub/onsight#v0.16.0`), and upgrade on purpose.
 
 ## Unreleased
-- Dev only, nothing changes for projects: Storybook with the accessibility addon and stories for Button, Badge and Alert (`npm run storybook`, `npm run test:stories`). CI has a new `stories` job and `main` is protected. The npm package is unchanged (`files` keeps dev tools out).
+- Dev only, nothing changes for projects: Storybook with the accessibility addon and stories for Button, Badge and Alert (`npm run storybook`, `npm run test:stories`). Storybook is online at /storybook/ on the GitHub Pages site. CI has a new `stories` job and `main` is protected. The npm package is unchanged (`files` keeps dev tools out).
 
 ## 0.18.0 (2026-11-22)
 - New: `npx onsight-init`. Run it in a project root after installing. It adds a marked Onsight section to the project's `AGENTS.md` (created if missing) that points agents to the installed package's `AGENTS.md`, docs and CHANGELOG, and links `AGENTS.md` from `CLAUDE.md`. Running it again only replaces its own section. `--dry-run` shows the changes first.

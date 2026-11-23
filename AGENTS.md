@@ -25,7 +25,7 @@ You are working with **Onsight**, the official design system of the Internationa
 | Components: Button, Badge, Alert, form fields, Tabs, Dialog, Card, Table, Spinner, Tooltip, Drawer, Avatar, Header/Nav/Footer, Pagination, Breadcrumbs, Empty state, Toast, Autocomplete, Filters, Page layout (list, how to add more) | `docs/components/README.md` |
 | A full example page to model new pages on | `examples/sporthub-rankings.html` |
 | Component styles and live examples | `components/*.css`, `components/*.examples.html` |
-| Storybook (component states, accessibility tests): `npm run storybook`, `npm run test:stories` | `stories/`, `.storybook/` |
+| Storybook (component states, accessibility tests; online at https://rodeohub.github.io/onsight/storybook/): `npm run storybook`, `npm run test:stories` | `stories/`, `.storybook/` |
 | React components | `react/` (`import { Button, Badge, Alert, TextField, ... } from "@slacklineinternational/onsight/react"`) |
 | What differs from the Slackline Sport Hub (for its developers) | `docs/sporthub-differences.md` |
 | Figma library (a mirror of this repo) | `docs/figma.md` |
