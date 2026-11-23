@@ -15,11 +15,24 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+      - run: npm ci
       - name: Build and check contrast (WCAG AA)
         run: npm run check
       - name: React components render as documented
-        run: npm install --no-save react react-dom && npm run test:react
+        run: npm run test:react
       - name: Compiles in a real Tailwind v4 project
         run: npm install --no-save tailwindcss@4 @tailwindcss/cli@4 && npm run test:tailwind
       - name: dist/ is up to date
         run: git diff --exit-code dist/ || (echo "Run npm run build and commit dist/." && exit 1)
+  stories:
+    # Renders every Storybook story in a real browser and fails on accessibility violations.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Stories render and pass accessibility checks
+        run: npm run test:stories
