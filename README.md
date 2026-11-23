@@ -24,10 +24,13 @@ Design tokens, guidelines and components for projects of the [International Slac
 npm run build   # tokens/ -> dist/
 npm run check   # build + fail if any promised color pair is below WCAG AA
 node scripts/audit.mjs ../some-project/src   # find hard-coded colors (errors) and raw sizes (warnings) in a project
+npm install            # first time only: installs the dev tools (Storybook, tests)
+npm run storybook      # component workshop at http://localhost:6006 (light/dark switch, accessibility panel)
+npm run test:stories   # renders every story in a browser and fails on accessibility violations
 ```
 
 In a project: `npm install @slacklineinternational/onsight`, then `npx onsight-init` (connects the project's AGENTS.md and CLAUDE.md to Onsight) and `npx onsight-audit src` (add `--strict` to fail on warnings too).
-No dependencies; Node 18+.
+The published package has no dependencies (Node 18+). Storybook, Vitest and Playwright are dev tools only: they are not in the npm package, and the token build (`scripts/build.mjs`) still needs nothing installed. Use a current Node (22) for Storybook.
 
 ## Status
-Version 0.7: foundations plus 14 component families (see `docs/components/README.md`). More are extracted from the Slackline Sport Hub one at a time. Maintainers: Roberto de Oliveira, with Can Sahin and Muhammad Martinez.
+Version 0.18: foundations plus the component families in `docs/components/README.md`, with React wrappers in `react/`. Storybook is set up (since 2026-11-23); stories exist for Button, Badge and Alert so far, the other React components follow when Roberto gives the go-ahead. Storybook is not hosted yet, it runs locally. See `DECISIONS.md` for open questions. Maintainers: Roberto de Oliveira, with Can Sahin and Muhammad Martinez.
