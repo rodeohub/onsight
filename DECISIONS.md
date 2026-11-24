@@ -69,9 +69,7 @@ Agents working with Roberto: raise the open questions with him at the start of a
 
 ## Pending actions
 - **Storybook stories (go-ahead needed per batch):** done: Button, Badge, Alert, TextField, Card (40 tests, accessibility violations fail the run). Roberto approved exactly these 5 on 2026-11-23. The other React components have none yet (Autocomplete, Avatar, Breadcrumbs, Dialog, Drawer, EmptyState, Fieldset, Filters, Navigation and Header/Footer, Page, Pagination, Spinner, Table, Tabs, Theme, Toast, Tooltip, TextArea, SelectField, Checkbox, Radio). Planned in batches: forms, navigation, overlays. Do not write more until Roberto says so.
-- **Rename the Claude project** "ISA Design System" to "Onsight" (claude.ai, project settings; only Roberto can do this).
 - **Missing logos:** more may follow (for example ISA Nature). Roberto provides the SVGs; they go into `assets/logos/` (list in `assets/logos/README.md`, Still missing).
-- **npm token (Roberto):** trusted publishing works (v0.17.4, 2026-11-15). Delete the GitHub secret `NPM_TOKEN` and the token on npmjs.com; nothing uses them now.
 
 ## Open questions
 3. **Solid badges (parked by Roberto, 2026-11-14):** SportHub has two solid badges (athlete: white on red, judge: white on green). Add a solid badge style, or keep soft and outline only? Do not raise again until Roberto does or the SportHub migration starts.
