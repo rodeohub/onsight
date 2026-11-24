@@ -2,6 +2,9 @@
 
 You are working with **Onsight**, the official design system of the International Slackline Association (ISA). Call it Onsight in code comments, docs, commit messages and pull requests. The npm package is `@slacklineinternational/onsight`; classes and variables keep the prefix `isa-`. Read this file first. For the project status, open questions and decisions, read the "Pending actions", "Open questions" and "Next steps" sections of `DECISIONS.md` before you start. It is short on purpose: open the linked doc for the area you are about to change, not all of them.
 
+## Task tracking
+Work is tracked in Linear: team RODEO (key `RDO`), project "Onsight". When Roberto names an issue (for example "work on RDO-20") or asks you to work through the backlog, read it there. Branch names come from the issue (`roberto/rdo-20-story-selectfield`). Skip issues that need Roberto's accounts or a decision, and ask first. Do not change an issue's status unless asked.
+
 ## Rules (always)
 1. **Use semantic tokens only.** Colors come from `--isa-color-<role>` (or the Tailwind classes built from them, e.g. `bg-action-primary-bg`, `text-muted`, `bg-subtle`, `border-strong`; text styles as `type-h1`, `type-body`). Never write hex, rgb or hsl values, and never use primitive tokens (`--isa-color-green-700`) in a project. If no role fits, stop and propose a new role in this repo instead of inventing a value.
 2. **WCAG 2.2 AA minimum.** Normal text 4.5:1, large text (24px+ or 18.66px+ bold) and UI parts 3:1, visible focus ring on everything interactive (`border.focus`, or `border.focus-inverse` on dark and brand surfaces), links in text underlined. House rule, stricter than AA: touch targets at least 44px. The roles are pre-checked; mixing roles that are not listed in `tokens/contrast-pairs.json` is not.
